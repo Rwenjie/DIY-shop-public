@@ -13,14 +13,14 @@ const state = {
   /*  cookie: false, // 保存cookie*/
     // 用户基本信息
     token: "",
-    profile: {
-        userId: null,
-        username: null,
-        profileUrl: 'https://rwenjie-blog.oss-cn-hangzhou.aliyuncs.com/div/member/profile/default%20avatar.png',
-        miToke: null,
-        tel: null,
-        openId: null,
-        wxToken: null,
+        profile: {
+            userId: null,
+            username: null,
+            profileUrl: 'https://rwenjie-blog.oss-cn-hangzhou.aliyuncs.com/div/member/profile/default%20avatar.png',
+            miToke: null,
+            tel: null,
+            openId: null,
+            wxToken: null,
     },
     //登录状态
     loginState: !!sessionStorage.getItem("tokenStr"),
