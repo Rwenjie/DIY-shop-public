@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
 import cart from "./modules/cart"
+import createGood from "./modules/createGood"
 
 import { userInfo,} from "network/login";
 
@@ -58,7 +59,8 @@ const store = createStore({
 
     },
     modules: {
-        cart
+        cart,
+        createGood
     }
 });
 

@@ -49,7 +49,7 @@
                         <el-row>
                             <el-col :span="2"></el-col>
                             <el-col :span="20">
-                                <el-input v-model="option"
+                                <el-input v-model="options[Id]"
                                           placeholder="命名属性"
                                           @change="addOption(Id)"
                                           size="small" >
@@ -102,7 +102,9 @@
         name: "Variations",
         data() {
             return {
-                option: "",
+                options: [
+
+                ],
                 dialogVisible: false,
                 variations: [
                     {
@@ -111,13 +113,34 @@
                             "白色","黄色","绿色"
                         ],
                         price: false,
-                        number: false,
-                        sku: false,
-                        show: true}
+                        number: true,
+                        sku: true,
+                        show: true
+                    },
+                    {
+                        name: "内存",
+                        options: [
+                            "64GB","128GB","256GB","512GB"
+                        ],
+                        price: true,
+                        number: true,
+                        sku: true,
+                        show: true
+                    },
+                    {
+                        name: "运行内存",
+                        options: [
+                            "6GB","8GB","12GB"
+                        ],
+                        price: true,
+                        number: true,
+                        sku: true,
+                        show: true
+                    }
 
                 ],
                 show: [],
-                variationName: ""
+                variationName: "",
             }
         },
         methods: {
@@ -151,12 +174,10 @@
             },
             //添加属性
             addOption(id) {
-                 if (this.variations[id].options.indexOf(this.option)!=-1){
-                     this.option = "";
-                     return;
+                 if (this.variations[id].options.indexOf(this.options[id])==-1){
+                     this.variations[id].options.push(this.options[id]);
                  }
-                this.variations[id].options.push(this.option);
-                this.option = "";
+                this.options[id] = "";
             },
             //删除属性
             deleteOption(Id, oId){

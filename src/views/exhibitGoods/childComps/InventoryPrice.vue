@@ -47,9 +47,11 @@
                 </el-col>
 
                 <el-col :span="18">
-                    <sku></sku>
+
                 </el-col>
+
             </el-row>
+            <sku></sku>
         </div>
     </div>
 </template>

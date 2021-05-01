@@ -58,11 +58,18 @@
         data() {
             return {
                 activeNames: ['1'], // 默认第一个collapse是展开的
+                imgs: [],
                 goodsParams:{ //上传商品返回的数据
 
                 }
             }
         },
+        methods: {
+            uploadImg(url) {
+                this.imgs.push(url);
+
+            }
+        }
 
     }
 </script>

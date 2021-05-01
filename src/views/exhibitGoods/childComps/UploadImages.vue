@@ -74,6 +74,11 @@
             uploadSuccess(res, file) {
                 const image = {name: file.name, url: res.data}
                 this.imageUrl.push(image);
+                //this.$bus.$emit("imageUrls", this.imageUrl);
+                //将照片信息保存到Vuex
+                this.$store.dispatch("addImages", {
+                    imageUrl: this.imageUrl
+                });
                 console.log(this.imageUrl);
             },
             uploadError(err, file, fileList) {
@@ -86,7 +91,7 @@
             submit: {
                 deep: true, // deep为true，会监视pagination的属性及属性中的对象属性变化
                 handler() { //
-                    console.log("images=>"+this.imageUrl);
+
                 }
             }
         }

@@ -11,3 +11,8 @@ export const STATE_LOGIN = "state-login";
 export const GET_TOKEN = "get-token";
 
 export const SET_TOKEN = "set-token";
+
+/*
+* createGoods.js
+* */
+export const ADD_IMAGES = "add-images";
